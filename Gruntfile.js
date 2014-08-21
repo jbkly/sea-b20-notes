@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-simple-mocha');
+  // grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.initConfig({
     clean: {
@@ -61,4 +62,5 @@ module.exports = function(grunt) {
   grunt.registerTask('backbone:test', ['browserify:test', 'mocha:backbonetest']);
   grunt.registerTask('test', ['backbone:test', 'simplemocha']);
   grunt.registerTask('default', ['test']);
+  grunt.registerTask('buildtest', ['test', 'build:dev']);
 };

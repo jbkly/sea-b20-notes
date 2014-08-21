@@ -1,3 +1,4 @@
+'use strict'
 var Backbone = require('backbone');
 var $ = require('jquery');
 Backbone.$ = $;
@@ -29,5 +30,6 @@ module.exports = Backbone.View.extend({
     var template = require('../templates/notes-collection.hbs');
     this.$el.html(template());
     this.addAll();
+    return this;
   } 
 });
